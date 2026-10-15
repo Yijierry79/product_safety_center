@@ -1,0 +1,28 @@
+# Product Security Center — Responsive homepage
+
+这是独立的英文单首页，入口为 `index.html`，支持电脑、平板和手机。仅需本目录内的 `index.html`、`assets/`、`.nojekyll`；无需安装、构建、服务器路由或 JSON 接口。此 README 可一并上传。
+
+## 上传 GitHub Pages
+
+1. 将本文件夹**里面的所有内容**上传至仓库根目录，使 `index.html` 与 `assets/` 同级；不要只上传 ZIP，也不要把整个文件夹额外嵌套一层。
+2. 仓库 Settings → Pages → Deploy from a branch，选择存放文件的分支及 `/(root)`，保存。
+3. 等待发布成功，再使用 GitHub 提供的 Visit site 地址访问。仓库代码页点击 HTML 只会查看源码。
+
+支持 GitHub 仓库子路径，也可以双击 `index.html` 本地查看。`local-preview.js` 只在本地 file:// 打开时载入，用原字体字节避免浏览器安全限制；线上不加载该兼容文件。
+
+## 内容与交互
+
+- 首页保留五步流程、公告列表、年份筛选、分页、漏洞报告卡及原品牌头尾。订阅模块已移除。
+- 五步收起显示 Detection / Verification / Remediation / Disclosure / Improvement；点击后显示完整标题和对应英文说明，Esc或再次点击收回。
+- 公告为演示/占位，共 20 条，每页 10 条。按要求移除列表上方的演示提示与行内 Demo 标识。并非真实已发布漏洞清单。点击条目展开演示说明。2024 用于演示无结果状态。
+- 正式公告可在 `assets/js/content.js` 替换；目前详情为演示说明，没有查询或提交后台，也不存储个人信息。`index.html` 中前10条静态内容需一并同步。
+- `Email Directly` 使用暂定邮箱 `prist@streamax.com` 打开邮件客户端。模板入口目前显示 coming soon，没有假下载链接；上线正式内容前替换实际模板。
+- Logo/Home 返回本项目首页；其他官网菜单访问 Streamax 官网完整地址，保留头尾内容。
+
+## 素材
+
+首图原文件为 3840×2288。保留同分辨率 WebP，并提供 2560/1600/1024 的响应式版本，由浏览器按屏幕和像素密度选择。没有把完整画布截图当网页背景。所有图片、字体、CSS、JS 都在 assets 中；无临时 Figma URL。
+
+字体由原 TTF 无损封装为 WOFF，字形未改变。导航动画保留全部33帧并按实际显示双倍密度压缩。`assets/js/gsap.min.js` 为原项目已有库，没有新增生产依赖。
+
+本次只准备静态发布文件，未上传、推送或部署 GitHub。手机验证为浏览器设备模拟，不代表真实 iPhone/Android 设备认证。
