@@ -49,5 +49,6 @@
  const reset=()=>{year.value='all';current=1;render();year.focus({preventScroll:true});};clear.addEventListener('click',reset);document.querySelector('[data-clear-year]').addEventListener('click',reset);
  pagination.addEventListener('click',event=>{const button=event.target.closest('[data-page]');if(!button||button.disabled)return;current=button.dataset.page==='next'?current+1:button.dataset.page==='previous'?current-1:Number(button.dataset.page);render({moveFocus:true});});
  list.addEventListener('toggle',event=>{if(event.target.open&&event.target.matches('details'))list.querySelectorAll('details[open]').forEach(el=>{if(el!==event.target)el.open=false;});},true);
+ document.querySelector('[data-template-placeholder]')?.addEventListener('click',()=>{document.querySelector('#template-status').textContent='Report template coming soon.';});
  render();
 })();
